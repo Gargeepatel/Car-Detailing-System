@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Car Comparision</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    
+</head>
+
+<body>
+
+    <!------------------- edited  -------------------->
+
+    <div class="whole" >
+      <div class="navbar" id="navbar">
+        <!-- <div class="logo"><img src="images/logo.png" alt="MATREEX" /></div> -->
+
+        <a href="#" class="logo"> <span>Scar</span>Drive </a>
+        <div class="nav-contents" id="nav-content">
+          <i
+            id="hehe"
+            class="bi bi-x"
+            onclick="navmenuoff()"
+            style="color: #fff; font-size: 2rem"
+          ></i>
+          <ul>
+            <a href="../home.php"><li>HOME</li></a>
+            <a href="../EMI.php"><li>EMI</li></a>
+            <a href="../cars.php"><li>CARS</li></a>
+            <a href="../comparision/index.html"><li>Comparision</li></a>
+            <button type="button" class="nav-btn">
+              <i class="bi bi-person" id="" style="font-size: 2rem"></i>
+            </button>
+          </ul>
+        </div>
+                <i
+          id="hehe"
+          class="bi bi-list"
+          onclick="navmenuon()"
+          style="font-size: 2rem; margin-top: 17px; color: #fff"
+        ></i>
+      </div>
+
+      <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+
+    <!--  ------------------------------------------------------ -->
+
+
+    <h1 class="display-5 my-5 text-center">Car Comparision</h1>
+    <div class="container">
+        <div class="col-md-9 mx-auto">
+            <table class="table">
+
+                <tr class="bg-light">
+                    <th>Select Product</th>
+                    <th width="300px">
+                        <select class="form-control" id="select1" onchange="item1(this.value)">
+                            <option value="0">-- Select Anyone --</option>
+                        </select>
+                    </th>
+                    <th width="300px">
+                        <select class="form-control" id="select2" onchange="item2(this.value)">
+                            <option value="0">-- Select Anyone --</option>
+                        </select>
+                    </th>
+                </tr>
+
+                <tr>
+                    <th>Product Image</th>
+                    <td>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png" id="img1" alt="">
+                    </td>
+                    <td>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png" id="img2" alt="">
+                    </td>
+                </tr>
+
+                <tr>
+                    <th class="bg-light">Product Price</th>
+                    <td class="bg-light" id="price1">N/A</td>
+                    <td class="bg-light" id="price2">N/A</td>
+                </tr>
+
+                <tr>
+                    <th>Milage</th>
+                    <td id="mila1">N/A</td>
+                    <td id="mila2">N/A</td>
+                </tr>
+
+                <tr>
+                    <th class="bg-light">Engine</th>
+                    <td class="bg-light" id="engine1">N/A</td>
+                    <td class="bg-light" id="engine2">N/A</td>
+                </tr>
+
+                <tr>
+                    <th>Fuel Type</th>
+                    <td id="fuel1">N/A</td>
+                    <td id="fuel2">N/A</td>
+                </tr>
+
+                <tr>
+                    <th class="bg-light">Transmission</th>
+                    <td id="trans1" class="bg-light">N/A</td>
+                    <td id="trans2" class="bg-light">N/A</td>
+                </tr>
+
+                <tr>
+                    <th>Seating Capacity</th>
+                    <td id="seat1">N/A</td>
+                    <td id="seat2">N/A</td>
+                </tr>
+
+                <tr>
+                    <th class="bg-light">Product brand</th>
+                    <td id="brand1" class="bg-light">N/A</td>
+                    <td id="brand2" class="bg-light">N/A</td>
+                </tr>
+            </table>        
+        </div>
+    </div>
+    
+    <style>
+
+    .display-5 {
+      padding-top: 40px;
+      font-size: 45px;
+    }
+        td>img{
+
+            width: 100%;
+            height: 250px;
+            object-fit: contain;
+        }
+
+
+        /* -------------- edited ---------------------  */
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Iso&family=Rubik+Marker+Hatch&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap%27");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  
+  scroll-behavior: smooth;
+}
+
+.scrolled .navbar {
+  background-color: rgba(17, 15, 15, 0.967);
+}
+
+.scrolled .nav-btn {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.scrolleddrk .navbar {
+  transition: 2s;
+  background-color: #000;
+}
+
+.scrolleddrk .nav-contents ul a {
+  color: #fff;
+}
+
+.scrolleddrk .logo img {
+  -webkit-filter: grayscale(0) invert(0);
+  filter: grayscale(0) invert(0);
+}
+
+.scrolleddrk .nav-btn {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 10px 50px;
+  /* background: rgb(24, 23, 23); */
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  z-index: 99999;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: 0.2s all ease-in;
+  justify-content: center;
+}
+
+.nav-contents {
+  flex: 1;
+}
+
+.logo img {
+  width: 50px;
+}
+
+.nav-contents ul {
+  margin-left: 5rem;
+  display: inline;
+}
+
+.nav-contents ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 15px 25px;
+  border-radius: 5px;
+  transition: 0.2s all ease-in-out;
+}
+
+.nav-contents ul a {
+  color: #000;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.nav-contents ul li:hover {
+  color: #f9d806;
+}
+
+.nav-btn {
+  /* padding: 1rem 1rem; */
+  color: #fff;
+  border: 0;
+  margin-top: 8px;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  transition: 0.2s all ease-in-out;
+}
+
+.nav-btn:hover {
+  color: #f9d806;
+}
+
+.nav-contents .nav-btn {
+  float: right;
+}
+
+.install-btn {
+  color: #000;
+  border: none;
+  float: right;
+  padding: 0.6rem 1.7rem;
+  margin-top: 0.3rem;
+  background-color: #ffee80;
+  outline: none;
+  /* color: #fff; */
+  margin-left: 1rem;
+  border-radius: 20px;
+}
+
+.install-btn:hover {
+  color: #000;
+  background-color: #f9d806;
+}
+
+.btn {
+  position: relative;
+  display: flex;
+  padding: 10px 30px;
+  background: transparent;
+  color: rgb(10, 8, 8);
+  text-decoration: none;
+  letter-spacing: 1px;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+.btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.navbar .logo{
+  font-size: 2.0rem;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar .logo span{
+  color:  #f9d806;
+}
+
+        /* ------------------------------------------- */
+    </style>
+
+
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
+
+<script src="data.js"></script>
+<script>
+    for (var i=1; i<product.length; i++)
+    {
+        document.getElementById("select1").innerHTML +=`
+        <option value="${i}">${product[i].title}</option>
+        `;
+
+        document.getElementById("select2").innerHTML +=`
+        <option value="${i}">${product[i].title}</option>
+        `;
+    }
+
+    function item1(a) {
+        var select2 = document.getElementById("select2").value;
+        if (a!=select2)
+        {
+            document.getElementById("img1").src = product[a].image;
+            document.getElementById("price1").innerHTML = "Rs " + product[a].Price;
+            document.getElementById("mila1").innerHTML = product[a].Milage;
+            document.getElementById("engine1").innerHTML = product[a].Engine;
+            document.getElementById("fuel1").innerHTML = product[a].Fuel;
+            document.getElementById("trans1").innerHTML = product[a].Transmission;
+            document.getElementById("seat1").innerHTML = product[a].Seating;
+            document.getElementById("brand1").innerHTML = product[a].brand;
+        }
+        else
+        {
+            document.getElementById("select1").selectedIndex = 0;
+            document.getElementById("img1").src = product[0].image;
+            document.getElementById("price1").innerHTML = ""
+            document.getElementById("mila1").innerHTML = ""
+            document.getElementById("engine1").innerHTML = ""
+            document.getElementById("fuel1").innerHTML = ""
+            document.getElementById("trans1").innerHTML = ""
+            document.getElementById("seat1").innerHTML = ""
+            document.getElementById("brand1").innerHTML = ""
+        }
+    }
+
+    function item2(a) {
+        var select1 = document.getElementById("select1").value;
+        if(a!=select1)
+        {
+            document.getElementById("img2").src = product[a].image;
+            document.getElementById("price2").innerHTML = "Rs " + product[a].Price;
+            document.getElementById("mila2").innerHTML = product[a].Milage;
+            document.getElementById("engine2").innerHTML = product[a].Engine;
+            document.getElementById("fuel2").innerHTML = product[a].Fuel;
+            document.getElementById("trans2").innerHTML = product[a].Transmission;
+            document.getElementById("seat2").innerHTML = product[a].Seating;
+            document.getElementById("brand2").innerHTML = product[a].brand;
+        }
+        else
+        {
+            document.getElementById("select2").selectedIndex = 0;
+            document.getElementById("img2").src = product[0].image;
+            document.getElementById("price2").innerHTML = ""
+            document.getElementById("mila2").innerHTML = ""
+            document.getElementById("engine2").innerHTML = ""
+            document.getElementById("fuel2").innerHTML = ""
+            document.getElementById("trans2").innerHTML = ""
+            document.getElementById("seat2").innerHTML = ""
+            document.getElementById("brand2").innerHTML = ""
+        }
+    }
+</script>
